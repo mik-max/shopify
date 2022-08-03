@@ -1,0 +1,39 @@
+.appBar{
+     box-shadow: none;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.title{
+     flex-grow: 1;
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     font-family: 'Josefin Sans', sans-serif;
+     font-size: 30px;
+     letter-spacing: 1px;
+     font-weight: 700;
+}
+.image{
+     margin-right: 10px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+.menuButton{
+    margin-right: 2px;
+     
+}
+.grow{
+     flex-grow: 1;
+}
+.search{
+     position: relative;
+     border-radius: 10px;
+     background-color: white;
+     margin-right: 5px;
+     margin-left: 0px;
+     width: 100%;
+}
+.badge{
+     background-color: red;
+     color: white;
+}

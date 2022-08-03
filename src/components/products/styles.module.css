@@ -1,0 +1,18 @@
+.root{
+     max-width: 100%;
+}
+.media{
+     height: 260px;
+}
+.cardContent{
+     display: flex;
+     justify-content: space-between;
+     padding: 10px 0px;
+}
+.cardActions{
+     justify-content: flex-end;
+}
+.buttons{
+     display: flex;
+     align-items: center;
+}

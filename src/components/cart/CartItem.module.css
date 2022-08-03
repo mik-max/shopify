@@ -1,0 +1,14 @@
+.media{
+     height: 260px;
+}
+.cardContent{
+     display: flex;
+     justify-content: space-between;
+}
+.cardActions{
+     justify-content: space-between;
+}
+.buttons{
+     display: flex;
+     align-items: center;
+}

@@ -1,0 +1,29 @@
+.container{
+     margin-top: 10%;
+     padding-bottom: 15px;
+}
+.title{
+     margin-top: 5%;
+}
+.emptyButton{
+     min-width: 150px;
+     margin: 5px;
+}
+.checkoutButton{
+     min-width: 150px;
+     margin: 5px;
+}
+.link{
+     text-decoration: none;
+}
+.cardDetails{
+     display: flex;
+     margin-top: 10%;
+     width: 100%;
+     justify-content: space-between;
+}
+.buttons{
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+}
