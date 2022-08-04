@@ -74,8 +74,8 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
                     <Typography variant = 'h4' align='center'>Checkout</Typography>
                     <Stepper activeStep={activeStep} className ={classes.stepper}>
                          {steps.map((step, index) => (
-                              <Step key={index}>
-                                   <StepLabel>{step}</StepLabel>
+                              <Step key={index} className = {classes.step}>
+                                   <StepLabel className = {classes.stepLabel}>{step}</StepLabel>
                               </Step>
                          ))}
                     </Stepper>

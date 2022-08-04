@@ -26,3 +26,25 @@
      font-weight: 900;
      font-style: italic;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+     .layout{
+          margin: 30% 12% 0px;
+          width: auto;
+     }
+}
+
+@media (max-width: 479px){
+     .layout{
+          margin: 30% 0% 0px;
+          width: auto;
+     }
+     .step{
+          font-size: 0.575rem !important;
+     }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     .layout{
+          margin: 30% 10% 0px;
+          width: auto;
+     }
+}

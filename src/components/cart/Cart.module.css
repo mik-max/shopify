@@ -1,6 +1,7 @@
 .container{
      margin-top: 10%;
      padding-bottom: 15px;
+     border: 1px solid red;
 }
 .title{
      margin-top: 5%;
@@ -26,4 +27,48 @@
      display: flex;
      align-items: center;
      gap: 1rem;
+}
+/* Small mobile devices */
+@media (max-width: 479px){
+     .container{
+          margin-top: 28%;
+          border: 1px solid green;
+          padding-bottom: 15px;
+     }
+     .title{
+        font-size: 30px !important;
+        font-weight: bold !important;
+     }
+     .cardDetails{
+          flex-wrap: wrap;
+     }
+     .subtotal{
+          font-size: 18px !important;
+          text-align: center !important;
+          margin: 0px auto !important;
+     }
+     .buttons{
+          flex-wrap: wrap;
+          gap: .3rem;
+          justify-content: center;
+     }
+     .checkoutButton, .emptyButton{
+          width: 100%;
+     }
+
+}
+/* Big mobile devices */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     .container{
+          margin-top: 20%;
+          border: 1px solid green;
+          padding-bottom: 15px;
+     }
+     
+     .subtotal{
+          font-size: 26px;
+     }
+     .buttons{
+          gap: .5rem;
+     }
 }

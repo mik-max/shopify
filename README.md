@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Project Details
+This is a reactJs e-commerce project (Etolie) That uses commerceJs to power the front end. Every of the api that helps in adding to cart, creating a checkout etc are all powered by commerceJs. Also, the project is integrated with stripe payment gateway.
+
+## Technologies used
+1) ReactJs
+2) CommerceJs
+3) MaterialUi
+4) StripeJs
+5) stripe
+6) dotenv
+
+## Hosting site
+The Project is currently hosted on netlify
