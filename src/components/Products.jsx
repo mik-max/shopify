@@ -5,7 +5,7 @@ import Product from './products/Product';
 import classes from './Products.module.css';
 
 function Products({products, onAddToCart}) {
-     const {darkMode, setDarkMode} = useContext(Context);
+     const {darkMode} = useContext(Context);
   return (
     <main className= {darkMode ? classes.mainDark : classes.main}>
           <Grid container justify = 'center' spacing={4}>

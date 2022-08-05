@@ -4,9 +4,7 @@
      width: auto;
      min-height: 100vh;
 }
-.layoutDark{
-     
-}
+
 .loyaltyIcon{
      color: var(--main-color) !important;
 }
@@ -44,7 +42,13 @@
 .confirmationMessage{
      display: flex;
      flex-direction: column;
-     align-items: center;
+}
+.titleText{
+     font-weight: 900;
+}
+.backButton,.backButtonDark{
+     color: var(--secondary-main-color) !important;
+     border: 1px solid var(--secondary-main-color) !important;
 }
 .thanks{
      font-weight: 900;
@@ -60,7 +64,8 @@
 
 @media (max-width: 479px){
      .layout{
-          margin: 30% 0% 0px;
+          margin: 0% 0% 0px;
+          padding-top: 30%;
           width: auto;
      }
      .step{

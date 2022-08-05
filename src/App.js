@@ -11,7 +11,6 @@ import './App.css';
 function App() {
      const shouldLog = useRef(true)
      const  [products, setProducts] = useState([])
-     const [loading, setLoading] = useState(false)
      const [cart, setCart] = useState({})
      const [order, setOrder] = useState({})
      const[errorMessage, setErrorMessage] = useState('');
@@ -43,10 +42,10 @@ function App() {
           await commerce.cart.empty();
           fetchCart();
      }
-     const refreshCart = async () => {
-          await commerce.cart.refresh();
+     // const refreshCart = async () => {
+     //      await commerce.cart.refresh();
 
-     }
+     // }
      const handleCaptureCheckout = async (checkoutTokenId, newOrder) =>{
           try {
                const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
@@ -72,21 +71,17 @@ function App() {
      
      return (
           <>
-               {
-                    loading ? <h1>Loading</h1> : <div>
-                    <div className =  {darkMode ? 'AppDark' :'App'}>
-                         <BrowserRouter>
-                              <Navbar totalItems = {cart.total_items }/>
-                              <Routes>
-                                   <Route path = '/' element = {<Products products = {products} onAddToCart = {handleAddToCart}/>} />
-                                   <Route path = '/cart' element = {<Cart cart = {cart} update = {updateCartQuantitiy} remove = {removeFromCart} empty = {emptyCart} />} />
+              <div className =  {darkMode ? 'AppDark' :'App'}>
+                    <BrowserRouter>
+                         <Navbar totalItems = {cart.total_items }/>
+                         <Routes>
+                              <Route path = '/' element = {<Products products = {products} onAddToCart = {handleAddToCart}/>} />
+                              <Route path = '/cart' element = {<Cart cart = {cart} update = {updateCartQuantitiy} remove = {removeFromCart} empty = {emptyCart} />} />
 
-                                   {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
-                              </Routes>
-                         </BrowserRouter> 
-                    </div>
+                              {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
+                         </Routes>
+                    </BrowserRouter> 
                </div>
-               }
           </>
      );
 }
