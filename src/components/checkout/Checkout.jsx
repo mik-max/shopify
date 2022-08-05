@@ -1,17 +1,19 @@
-import React, {useState, useEffect, useRef}from 'react';
+import React, {useState, useEffect, useContext}from 'react';
+import Context from '../context';
 import { commerce } from '../../lib/commerce';
 import {useNavigate} from 'react-router-dom'
-import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button, CssBaseline} from '@mui/material';
+import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@mui/material';
+import LoyaltyIcon from '@mui/icons-material/Loyalty';
 import AddressForm from './AddressForm';
 import PaymentsForm from './PaymentsForm';
 import classes from './Checkout.module.css'
 const steps = ['Shipping Address', 'Payment details']
 function Checkout({cart, order, onCaptureCheckout, error}) {
      const navigate = useNavigate()
-     const shouldLog = useRef(true)
      const [activeStep, setActiveStep] = useState(0);
      const [checkoutToken, setCheckoutToken] = useState(null);
      const [shippingData, setShippingData] = useState({})
+     const {darkMode} = useContext(Context);
      console.log(cart.id)
     
      
@@ -42,10 +44,11 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
      const Form = () => activeStep === 0 ? <AddressForm checkoutToken = {checkoutToken} next = {next}/> : <PaymentsForm shippingData = {shippingData} checkoutToken = {checkoutToken} backStep = {backStep} nextStep = {nextStep} onCaptureCheckout = {onCaptureCheckout} />
      let Confirmation = () => order.customer ? (
          <>
-               <cssBaseLine/>
-                <div>
-                    <Typography variant = 'h5'>Thank You for your purchase {order.customer.firstname} {order.customer.lastname} </Typography>
-                    <Typography variant='h6'> We have also sent you a confirmation mail containing details of your purchase. </Typography>
+
+               <div className = {classes.confirmationMessage}>
+                    <Typography variant = 'h5' className = {classes.title}>Thank You for your purchase {order.customer.firstname} {order.customer.lastname} .</Typography>
+                    <Typography variant='h6'> We have sent you a confirmation mail containing details of your purchase. </Typography>
+                    <Typography variant='h6'> Kindly check your mail to view and keep track of your order.</Typography>
                     <Typography variant = 'h6' className = {classes.thanks}>With ❤️ from Etolie </Typography>
                     <Divider className = {classes.divider} /> 
                     <Typography variant = 'subtitle2'>Order ref: {order.customer_reference} </Typography>
@@ -71,11 +74,11 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
     <>
          <main className = {classes.layout}>
                <Paper className = {classes.paper}>
-                    <Typography variant = 'h4' align='center'>Checkout</Typography>
-                    <Stepper activeStep={activeStep} className ={classes.stepper}>
+                    <Typography variant = 'h4' align='center' className = {classes.title}>Checkout  <LoyaltyIcon fontSize='large' className = {classes.loyaltyIcon} /></Typography>
+                    <Stepper activeStep={activeStep} className ={classes.stepper} >
                          {steps.map((step, index) => (
-                              <Step key={index}>
-                                   <StepLabel>{step}</StepLabel>
+                              <Step key={index} className = {classes.step}>
+                                   <StepLabel className = {classes.stepLabel}>{step}</StepLabel>
                               </Step>
                          ))}
                     </Stepper>

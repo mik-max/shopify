@@ -1,0 +1,12 @@
+
+/* .buttonDivDark{
+     background-color: var(--dark-background-color);
+} */
+.backButton,.backButtonDark{
+     color: var(--secondary-main-color) !important;
+     border: 1px solid var(--secondary-main-color) !important;
+}
+.nextButton,.nextButtonDark{
+     background-color: var(--main-color) !important;
+     color: var(--light-text-color) !important;
+}

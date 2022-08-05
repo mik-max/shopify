@@ -7,5 +7,26 @@
      font-family: 'Josefin Sans', sans-serif !important;
 }
 :root{
-     --light-text-color: #ffffff;
+     --light-text-color: #000000;
+     --dark-text-color: #ffffff;
+     --main-color: #FCB424;
+     --secondary-main-color: #FA5396;
+     --background-color: #f1f2f3;
+     --dark-background-color: #000000;
+     
+     
+
+}
+button{
+     display: flex !important;
+     justify-content: center !important;
+     align-items: center !important;
+     gap: .4rem;
+}
+.moon {
+	color: #f1c40f !important;
+}
+
+.sun {
+	color: #f39c12 !important;
 }

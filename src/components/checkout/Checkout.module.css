@@ -1,6 +1,21 @@
 .layout{
-     margin: 10% 20% 0px;
+     margin: 0% 20% 0px;
+     padding-top: 10%;
      width: auto;
+     min-height: 100vh;
+}
+.layoutDark{
+     
+}
+.loyaltyIcon{
+     color: var(--main-color) !important;
+}
+.title{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 1rem;
+     color: var(--main-color) !important;
 }
 .paper{
      margin-top: 15px;
@@ -9,6 +24,10 @@
 .stepper{
      padding: 30px 0px 50px;
 }
+.step span svg{ 
+     color: var(--main-color) !important;
+}
+
 .buttons{
      display: flex;
      justify-content: flex-end;
@@ -22,7 +41,42 @@
      justify-content: center;
      align-items: center;
 }
+.confirmationMessage{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
 .thanks{
      font-weight: 900;
      font-style: italic;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+     .layout{
+          margin: 0% 12% 0px;
+          padding-top: 10%;
+          width: auto;
+     }
+}
+
+@media (max-width: 479px){
+     .layout{
+          margin: 30% 0% 0px;
+          width: auto;
+     }
+     .step{
+          font-size: 0.575rem !important;
+     }
+     .confirmationMessage h5{
+          font-size: 18px;
+     }
+     .confirmationMessage h6{
+          font-size: 18px;
+     }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     .layout{
+          margin: 0% 10% 0px;
+          padding-top: 10%;
+          width: auto;
+     }
 }

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import Context from '../context';
 import {Typography, Button, Divider} from '@mui/material';
 import {Elements, CardElement, ElementsConsumer} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import Review from './Review';
+import classes from './PaymentsForm.module.css'
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
 function PaymentsForm({checkoutToken, backStep, shippingData, nextStep, onCaptureCheckout}) {
-     
+     const {darkMode} = useContext(Context);
      const handleSubmit = async (event, elements, stripe) => {
           event.preventDefault();
           if(!stripe || !elements) return ;
@@ -45,8 +47,8 @@ function PaymentsForm({checkoutToken, backStep, shippingData, nextStep, onCaptur
                               <CardElement/>
                               <br/><br/>
                               <div style = {{ display : 'flex', justifyContent: 'space-between'}}>
-                                   <Button onClick={backStep} variant = 'outlined'>Back</Button>
-                                   <Button type = 'submit' variant='contained' disabled = {!stripe} color = 'primary' >
+                                   <Button onClick={backStep} variant = 'outlined' className = {darkMode ? classes.backButtonDark :classes.backButton}>Back</Button>
+                                   <Button className = {darkMode ? classes.nextButtonDark :classes.nextButton}  type = 'submit' variant='contained' disabled = {!stripe} >
                                         Pay {checkoutToken.subtotal.formatted_with_symbol}
                                    </Button>
                               </div>
