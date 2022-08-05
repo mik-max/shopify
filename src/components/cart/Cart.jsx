@@ -1,16 +1,16 @@
-import React ,{useState, useContext}from 'react';
+import React ,{useContext}from 'react';
 import Context from '../context';
 import {Container, Typography, Button, Grid, CircularProgress} from '@mui/material';
 import {ShoppingCartCheckout, RemoveShoppingCart, ShoppingCart} from '@mui/icons-material';
 import CartItem from './CartItem';
-import {Link , useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import classes from './Cart.module.css';
 function Cart({cart, update, remove, empty}) {
      const navigate = useNavigate()
      // const isEmpty = !cart.line_items.length;
      const {darkMode} = useContext(Context);
      console.log(cart)
-     if(cart.line_items == undefined) {
+     if(cart.line_items === undefined) {
           console.log('cart is undefined')
           return (
                <div className={classes.spinner}>
