@@ -1,17 +1,41 @@
 .root{
      max-width: 100%;
 }
+.rootDark{
+     background-color: var(--dark-background-color) !important;
+     color: var(--dark-text-color) !important;
+     border: 1px solid #ffffff;
+}
 .media{
      height: 260px;
+     padding: 10px;
+}
+.mediaDark{
+     height: 260px;
+     padding: 10px;
+     background-color: var(--dark-background-color) !important;
+
 }
 .cardContent{
      display: flex;
      justify-content: space-between;
      padding: 10px 0px;
+    
+}
+.cardContentDiv{
+     background-color: #ffffff;
+}
+.addToCartDark{
+     color: var(--main-color) !important;
+}
+.cardContentDivDark{
+     background-color: var(--dark-background-color) !important;
+     color: var(--dark-text-color) !important;
 }
 .cardActions{
      justify-content: flex-end;
 }
+
 .buttons{
      display: flex;
      align-items: center;

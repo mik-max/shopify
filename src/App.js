@@ -1,6 +1,7 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
+import Context from './components/context';
 import Products from './components/Products';
 import Navbar from './components/Navbar/Navbar';
 import Cart from './components/cart/Cart';
@@ -14,6 +15,7 @@ function App() {
      const [cart, setCart] = useState({})
      const [order, setOrder] = useState({})
      const[errorMessage, setErrorMessage] = useState('');
+     const {darkMode} = useContext(Context)
      
      const fetchProducts = async () => {
           const {data} = await commerce.products.list();
@@ -61,6 +63,7 @@ function App() {
           if(shouldLog.current){
                shouldLog.current = false;
                console.log('mounting');
+               console.log(shouldLog.current)
                fetchCart();
                fetchProducts();
           }
@@ -71,15 +74,17 @@ function App() {
           <>
                {
                     loading ? <h1>Loading</h1> : <div>
-                    <BrowserRouter>
-                         <Navbar totalItems = {cart.total_items }/>
-                         <Routes>
-                              <Route path = '/' element = {<Products products = {products} onAddToCart = {handleAddToCart}/>} />
-                              {!shouldLog.current &&  <Route path = '/cart' element = {<Cart cart = {cart} update = {updateCartQuantitiy} remove = {removeFromCart} empty = {emptyCart} />} />}
+                    <div className =  {darkMode ? 'AppDark' :'App'}>
+                         <BrowserRouter>
+                              <Navbar totalItems = {cart.total_items }/>
+                              <Routes>
+                                   <Route path = '/' element = {<Products products = {products} onAddToCart = {handleAddToCart}/>} />
+                                   <Route path = '/cart' element = {<Cart cart = {cart} update = {updateCartQuantitiy} remove = {removeFromCart} empty = {emptyCart} />} />
 
-                              {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
-                         </Routes>
-                    </BrowserRouter>
+                                   {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
+                              </Routes>
+                         </BrowserRouter> 
+                    </div>
                </div>
                }
           </>

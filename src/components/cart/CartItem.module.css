@@ -1,9 +1,15 @@
 .media{
      height: 260px;
 }
+.rootDark{
+     background-color: var(--dark-background-color) !important;
+     color: var(--dark-text-color) !important;
+     border: 1px solid #fff;
+}
 .cardContent{
      display: flex;
      justify-content: space-between;
+     padding: 10px 0px;
 }
 .cardActions{
      justify-content: space-between;
@@ -11,4 +17,11 @@
 .buttons{
      display: flex;
      align-items: center;
+}
+.removeButton,.removeButtonDark{
+     color: var(--main-color) !important;
+}
+.actionButton,.actionButtonDark{
+     color: var(--secondary-main-color) !important;
+     font-size: 25px;
 }
