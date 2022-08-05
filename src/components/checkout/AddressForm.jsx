@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react';
+import Context from '../context';
 import {InputLabel, Select, MenuItem, Button, Grid, Typography, TextField} from '@mui/material';
 import { commerce } from '../../lib/commerce';
-import {Link , useNavigate} from 'react-router-dom';
-import FormInput from './CustomTextField';
+import { useNavigate} from 'react-router-dom';
 import { useForm, FormProvider } from "react-hook-form";
+import classes from './AddressForm.module.css';
 function AddressForm({checkoutToken, next}) {
      const [shippingCountries, setShippingCountries] = useState([])
      const [shippingCountry, setShippingCountry] = useState('')
@@ -17,6 +18,7 @@ function AddressForm({checkoutToken, next}) {
      const [address, setAddress] = useState('')
      const [city, setCity] = useState('')
      const [zipcode, setZipCode] = useState('')
+     const {darkMode} = useContext(Context);
 
      const methods = useForm();
      const navigate = useNavigate();
@@ -52,10 +54,10 @@ function AddressForm({checkoutToken, next}) {
      }, [shippingSubdivision, checkoutToken.id, shippingCountry])
      
   return (
-    <>
-          <Typography variant='h6' gutterBottom>Shipping Address</Typography>
+    <div className = {darkMode && classes.formDark}>
+          <Typography  variant='h6' gutterBottom>Shipping Address</Typography>
           <FormProvider {...methods}>
-               <form onSubmit={methods.handleSubmit((data) => {next({firstName, lastName, address, email, city, zipcode, shippingCountry, shippingSubdivision, shippingOption})})}>
+               <form  onSubmit={methods.handleSubmit((data) => {next({firstName, lastName, address, email, city, zipcode, shippingCountry, shippingSubdivision, shippingOption})})}>
                     <Grid container spacing = {3}>
                          <Grid item xs = {12} sm = {6}>
                               <TextField id="firstName" value={firstName} onChange = {e => setFirstName(e.target.value)} label="First Name" required fullWidth variant="standard" type= 'text' />
@@ -108,13 +110,13 @@ function AddressForm({checkoutToken, next}) {
                          
                     </Grid>
                     <br />
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Button onClick={() => {navigate('/cart')}} variant="outlined" >Back to Cart</Button>
-                    <Button type="submit" variant="contained" color="primary">Next</Button>
+                    <div className = {darkMode ? classes.buttonDivDark :classes.buttonDiv} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Button className = {darkMode ? classes.backButtonDark :classes.backButton} onClick={() => {navigate('/cart')}} variant="outlined" >Back to Cart</Button>
+                    <Button className = {darkMode ? classes.nextButtonDark :classes.nextButton} type="submit" variant="contained" color="primary">Next </Button>
                     </div>
                </form>
           </FormProvider>
-    </>
+    </div>
   )
 }
 
