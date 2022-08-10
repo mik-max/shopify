@@ -1,6 +1,7 @@
 .appBar{
      box-shadow: none;
      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+     height: 70px;
 }
 .appBarDark{
      box-shadow: none;

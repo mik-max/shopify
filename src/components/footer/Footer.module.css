@@ -1,0 +1,88 @@
+.footer{
+     padding: 20px 50px;
+     background-color: var(--dark-background-color);
+}
+.title{
+     flex-grow: 1;
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     font-family: 'Josefin Sans', sans-serif;
+     font-size: 40px;
+     letter-spacing: 1px;
+     font-weight: 900;
+     color: var(--dark-text-color);
+}
+.item{
+     text-align: center;
+}
+.image{
+     margin-right: 10px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+.newsLetter{
+     display: flex;
+     flex-direction: column;
+     gap: .5rem;
+     color: var(--dark-text-color);
+}
+.newsLetter h5{
+     font-size: 20px;
+     font-weight: 700;
+}
+.newsLetter h6{
+     font-size: 18px;
+}
+.socialMedia{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: .8rem;
+}
+.socialMedia h4{
+     color: var(--dark-text-color);
+}
+.socialIconsDiv{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: .9rem;
+}
+.socialIconsDiv li {
+     list-style-type: none;
+}
+.socialIconsDiv li a{
+     color: var(--main-color)!important;
+}
+.emailInput{
+     width: 100%;
+     border: 1px solid var(--dark-text-color);
+     border-radius: 4px;
+     outline: none;
+     height: 50px;
+     padding: 10px;
+}
+.footerMenu{
+     color: var(--dark-text-color);
+}
+.footerMenu h5 {
+     font-size: 22px;
+     font-weight: 800;
+     margin-bottom: 1rem;
+}
+.footerMenu ul {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 1rem;
+}
+.footerMenu ul li{
+     list-style-type: none;
+}
+.footerMenu ul li a{
+     text-decoration: none;
+     color: var(--dark-text-color);
+}
