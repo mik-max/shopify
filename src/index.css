@@ -17,11 +17,12 @@
      
 
 }
-button{
+Button{
      display: flex !important;
      justify-content: center !important;
      align-items: center !important;
      gap: .4rem;
+     padding: 10px 16px !important;
 }
 .moon {
 	color: #f1c40f !important;

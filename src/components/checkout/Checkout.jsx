@@ -1,5 +1,4 @@
-import React, {useState, useEffect, useContext}from 'react';
-import Context from '../context';
+import React, {useState, useEffect}from 'react';
 import { commerce } from '../../lib/commerce';
 import {useNavigate} from 'react-router-dom'
 import {Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button} from '@mui/material';
@@ -13,7 +12,6 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
      const [activeStep, setActiveStep] = useState(0);
      const [checkoutToken, setCheckoutToken] = useState(null);
      const [shippingData, setShippingData] = useState({})
-     const {darkMode} = useContext(Context);
      console.log(cart.id)
     
      
@@ -46,7 +44,7 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
          <>
 
                <div className = {classes.confirmationMessage}>
-                    <Typography variant = 'h5' className = {classes.title}>Thank You for your purchase {order.customer.firstname} {order.customer.lastname} .</Typography>
+                    <Typography variant = 'h5' className = {classes.titleText}>Thank you for your purchase {order.customer.firstname} {order.customer.lastname} .</Typography>
                     <Typography variant='h6'> We have sent you a confirmation mail containing details of your purchase. </Typography>
                     <Typography variant='h6'> Kindly check your mail to view and keep track of your order.</Typography>
                     <Typography variant = 'h6' className = {classes.thanks}>With ❤️ from Etolie </Typography>
@@ -54,7 +52,7 @@ function Checkout({cart, order, onCaptureCheckout, error}) {
                     <Typography variant = 'subtitle2'>Order ref: {order.customer_reference} </Typography>
                </div>
                <br/>
-               <Button variant = 'outlined' onClick = {() => {navigate('/');}}>Back to Home</Button>
+               <Button className = {classes.backButton} variant = 'outlined' onClick = {() => {navigate('/');}}>Back to Home</Button>
          </>
      ) : (
           <div className={classes.spinner}>

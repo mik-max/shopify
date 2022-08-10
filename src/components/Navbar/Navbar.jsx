@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useContext} from 'react';
 import Context from '../context';
-import { AppBar, Toolbar, IconButton, Badge, Menu, MenuItem, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Badge, Typography } from '@mui/material';
 import {ShoppingCart} from '@mui/icons-material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';

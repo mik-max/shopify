@@ -161,6 +161,6 @@
      }
      .buttons{
           justify-content: center;
-          gap: 1rem;
+          gap: .5rem;
      }
 }
