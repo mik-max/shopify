@@ -6,6 +6,7 @@ import Products from './components/Products';
 import Navbar from './components/Navbar/Navbar';
 import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
+import Footer from './components/footer/Footer';
 import './App.css';
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
 
                               {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
                          </Routes>
+                         <Footer/>
                     </BrowserRouter> 
                </div>
           </>

@@ -12,7 +12,7 @@ function Footer() {
                     <Grid classsName = {classes.item} item  xs = {12} sm = {6} md ={4} lg = {4}>
                          <Typography onClick = { () => {navigate('/')}}  variant = 'h6' className={classes.title} color = 'inherit'>
                               Etolie
-
+                              
                               <img src = '/images/Etolie-Logo.png' alt ='Etolie Esquisite' height='25px' className={classes.image}  />
                          </Typography>
                     </Grid>
@@ -20,7 +20,11 @@ function Footer() {
                          <div className={classes.newsLetter}>
                               <Typography variant = 'h5'>New to Etolie ?</Typography>
                               <Typography variant = 'h6'>Subscribe to our newsletter to get updates on our latest offers!</Typography>
-                              <input className={classes.emailInput} type="email" name="email" id="email" />
+                              <form action="">
+                                   <input className={classes.emailInput} type="email" name="email" id="email" />
+                                   <input className={classes.submitInput} type="submit" name="submit" value="Let's Start" />
+                              </form>
+                              
                          </div>
                     </Grid>
                     <Grid classsName = {classes.item} item  xs = {12} sm = {6} md ={4} lg = {4}>

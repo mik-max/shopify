@@ -18,6 +18,7 @@
      font-size: 30px;
      letter-spacing: 1px;
      font-weight: 700;
+     cursor: pointer;
 }
 .image{
      margin-right: 10px;

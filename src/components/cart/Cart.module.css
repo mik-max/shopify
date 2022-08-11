@@ -13,8 +13,9 @@
      color: var(--dark-text-color) !important;
 }
 .title,.titleDark{
-     padding-top: 10px;
-     margin-top: 5%;
+     padding: 40px 0px 20px;
+     font-weight: 900  !important;
+     margin-top: 10%;
      display: flex;
      justify-content: center;
      align-items: center;
