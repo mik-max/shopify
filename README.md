@@ -83,3 +83,6 @@ This is a reactJs e-commerce project (Etolie) That uses commerceJs to power the 
 
 ## Hosting site
 The Project is currently hosted on netlify
+
+## Git hub link
+https://github.com/mik-max/shopify.git

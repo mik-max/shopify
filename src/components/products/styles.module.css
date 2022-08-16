@@ -1,14 +1,15 @@
 .root{
      max-width: 100%;
+     cursor: pointer;
 }
 .rootDark{
      background-color: var(--dark-background-color) !important;
      color: var(--dark-text-color) !important;
      border: 1px solid #ffffff;
+     cursor: pointer;
 }
 .media{
      height: 260px;
-     padding: 10px;
 }
 .mediaDark{
      height: 260px;
@@ -18,7 +19,8 @@
 }
 .cardContent{
      display: flex;
-     justify-content: space-between;
+     flex-direction: column;
+     /* justify-content: space-between; */
      padding: 10px 0px;
     
 }
