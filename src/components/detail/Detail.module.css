@@ -1,0 +1,126 @@
+.Container{
+     display: flex !important;
+     justify-content: center;
+     align-items: center;
+     gap: 5rem;
+     padding: 50px 10px;
+     margin: 5% 0;
+     /* border: 1px solid red; */
+     background-color: white;
+     position: relative;
+}
+.description{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     color: var(--light-text-color) !important;
+
+}
+.description h5 {
+     font-size: 20px;
+     font-weight: 500;
+     color: var(--light-text-color) !important;
+}
+.variantsName{
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+}
+.variantsName li {
+     list-style-type: none;
+     padding: 10px;
+     border: 1px solid var(--secondary-main-color);
+     border-radius: 4px;
+}
+.title{
+     flex-grow: 1;
+     display: flex;
+     align-items: center;
+     font-size: 40px;
+     letter-spacing: 1px;
+     font-weight: 900;
+     color: var(--light-text-color);
+     gap: 1rem;
+     padding: 15px 0px;
+}
+.image{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+.checkoutButton,.checkoutButtonDark{
+     width: 100%;
+     background-color: var(--main-color) !important;
+     color: var(--light-text-color) !important;
+}
+.spinner{
+     height: 80vh;
+     position: relative;
+}
+.spinnerDiv{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+     .Container{
+          flex-direction: column;
+          gap: 3rem;
+     }
+     
+     .description{
+          align-items: center;
+     }
+     .description h5{
+          text-align: center;
+     }
+}
+
+@media (max-width: 479px){
+     .Container{
+          flex-direction: column;
+          gap: 3rem;
+          margin: 10% 0;
+     }
+     .title{
+          font-size: 25px !important;
+     }
+     .image{
+          width: 40px;
+          height: 40px;
+     }
+     .description{
+          align-items: center;
+     }
+     .description h5{
+          text-align: center;
+          font-size: 17px;
+     }
+     .description h4{
+          font-size: 20px;
+     }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     .Container{
+          flex-direction: column;
+          gap: 3rem;
+     }
+     .title{
+          font-size: 30px !important;
+     }
+     .image{
+          width: 40px;
+          height: 40px;
+     }
+     .description{
+          align-items: center;
+     }
+     .description h5{
+          text-align: center;
+     }
+     .description h4{
+          font-size: 21px;
+     }
+}

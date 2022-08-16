@@ -20,7 +20,7 @@ function Products({products, onAddToCart}) {
                     </div>
                </div>
                <div className={classes.imageDiv}>
-                    <img src = '/images/shopping-pana.svg' alt = 'Caption img' />
+                    <img src = '/images/landing2.png' alt = 'Caption img' />
                </div>
           </div>
           <main className= {darkMode ? classes.mainDark : classes.main}>

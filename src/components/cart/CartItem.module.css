@@ -8,7 +8,7 @@
 }
 .cardContent{
      display: flex;
-     justify-content: space-between;
+     flex-direction: column;
      padding: 10px 0px;
 }
 .cardActions{

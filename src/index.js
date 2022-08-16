@@ -5,12 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AvailableContexts } from './components/context';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
      <AvailableContexts>
           <App />
-     </AvailableContexts>
-  
+     </AvailableContexts> 
 );
 
 // If you want to start measuring performance in your app, pass a function

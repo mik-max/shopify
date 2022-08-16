@@ -10,7 +10,6 @@
 }
 .media{
      height: 260px;
-     padding: 10px;
 }
 .mediaDark{
      height: 260px;
@@ -20,7 +19,8 @@
 }
 .cardContent{
      display: flex;
-     justify-content: space-between;
+     flex-direction: column;
+     /* justify-content: space-between; */
      padding: 10px 0px;
     
 }

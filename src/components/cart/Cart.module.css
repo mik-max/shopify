@@ -103,7 +103,7 @@
         font-weight: bold !important;
      }
      .cardDetails{
-          flex-wrap: wrap;
+          flex-direction: column;
      }
      .subtotal{
           font-size: 18px !important;

@@ -9,6 +9,7 @@
      background-color: var(--dark-background-color) !important;
      color: var(--dark-text-color) !important;
 }
+
 .title{
      flex-grow: 1;
      display: flex;
@@ -19,6 +20,17 @@
      letter-spacing: 1px;
      font-weight: 700;
      cursor: pointer;
+}
+.category{
+     color: var(--main-color) !important;
+}
+.category:hover{
+     background-color: rgba(253, 221, 133, 0.12) !important ;
+}
+
+.icon{
+     padding: 0px 5px;
+     font-size: 32px !important;
 }
 .image{
      margin-right: 10px;
@@ -88,8 +100,28 @@
 
 
 @media (max-width: 479px){
+     .title{
+          font-size: 20px;
+     }
      .image{
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
+     }
+
+     .categoryDiv{
+          display: none;
+     }
+     .label{
+          height: 24px;
+	     width: 45px;
+     }
+     .ball{
+          width: 20px;
+          height: 20px;
+     }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     .categoryDiv{
+          display: none;
      }
 }

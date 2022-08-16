@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Typography, Button} from '@mui/material';
+import {Grid, Typography} from '@mui/material';
 import {Instagram, FacebookRounded, Twitter, YouTube} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import classes from './Footer.module.css';
@@ -10,9 +10,8 @@ function Footer() {
           <div className={classes.subFooter}>
                <Grid container justify = 'center' spacing={3}>
                     <Grid classsName = {classes.item} item  xs = {12} sm = {6} md ={4} lg = {4}>
-                         <Typography onClick = { () => {navigate('/')}}  variant = 'h6' className={classes.title} color = 'inherit'>
+                         <Typography onClick = { () => {navigate('/')}}  variant = 'h5' className={classes.title} color = 'inherit'>
                               Etolie
-                              
                               <img src = '/images/Etolie-Logo.png' alt ='Etolie Esquisite' height='25px' className={classes.image}  />
                          </Typography>
                     </Grid>

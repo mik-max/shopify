@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import Context from '../context';
 import {Card, CardMedia, CardActions, Typography, IconButton, CardContent, Snackbar, Alert} from '@mui/material';
+import {Link} from 'react-router-dom'
 import {AddShoppingCart} from '@mui/icons-material';
 import classes from './styles.module.css';
 function Product({product, onAddToCart}) {
@@ -23,11 +24,14 @@ function Product({product, onAddToCart}) {
      }
   return (
     <Card className = {darkMode ? classes.rootDark :classes.root} >
-          <CardMedia className = {darkMode ? classes.mediaDark :classes.media}  image={product.image.url} title = {product.name} />
+          <Link to = {`/detail/${product.id}`}>
+               <CardMedia className = {darkMode ? classes.mediaDark :classes.media}  image={product.image.url} title = {product.name} />
+          </Link>
           <CardContent className={darkMode ? classes.cardContentDivDark :classes.cardContentDiv}>
                <div className={classes.cardContent}>
                     <Typography variant = 'h5' gutterBottom >
-                         {product.name}
+                         {truncate(product.name, 18)}
+                         
                     </Typography>
                     <Typography variant = 'h5'  >
                          {product.price.formatted_with_symbol}

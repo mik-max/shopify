@@ -6,8 +6,12 @@ import Products from './components/Products';
 import Navbar from './components/Navbar/Navbar';
 import Cart from './components/cart/Cart';
 import Checkout from './components/checkout/Checkout';
+import Detail from './components/detail/Detail';
 import Footer from './components/footer/Footer';
+import Category from './components/categories/Category';
 import './App.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
      const shouldLog = useRef(true)
@@ -18,8 +22,11 @@ function App() {
      const {darkMode} = useContext(Context)
      
      const fetchProducts = async () => {
-          const {data} = await commerce.products.list();
+          const {data} = await commerce.products.list({
+               category_slug: ['market'],
+             });
           setProducts(data)
+          
      }
      const fetchCart = async () => {
           setCart(await commerce.cart.retrieve())
@@ -69,9 +76,20 @@ function App() {
           }
      
      }, [])
+     const darkTheme = createTheme({
+          palette: {
+            mode: 'dark',
+          },
+     });
+     const lightTheme = createTheme({
+          palette: {
+            mode: 'light',
+          },
+     });
      
      return (
-          <>
+          <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+              <CssBaseline />
               <div className =  {darkMode ? 'AppDark' :'App'}>
                     <BrowserRouter>
                          <Navbar totalItems = {cart.total_items }/>
@@ -80,11 +98,13 @@ function App() {
                               <Route path = '/cart' element = {<Cart cart = {cart} update = {updateCartQuantitiy} remove = {removeFromCart} empty = {emptyCart} />} />
 
                               {!shouldLog.current && <Route path = '/checkout' element = {<Checkout cart = {cart} order = {order} onCaptureCheckout = {handleCaptureCheckout} error = {errorMessage} />} />}
+                              <Route path = '/detail/:id' element = {<Detail onAddToCart = {handleAddToCart} />} />
+                              <Route path = '/category/:categorySlug'  element = {<Category  onAddToCart = {handleAddToCart} />} />
                          </Routes>
                          <Footer/>
                     </BrowserRouter> 
                </div>
-          </>
+          </ThemeProvider>
      );
 }
 

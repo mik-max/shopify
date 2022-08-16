@@ -9,16 +9,16 @@
      min-height: 100vh;
 }
 .jumbotron, .jumbotronDark {
-     background-color: #fff;
+     background-image: linear-gradient(45deg, #FCB424, #FA5396);
      height: 100vh;
      display: flex;
      justify-content: space-between;
      padding: 20px 50px;
-     gap: 5rem;
+     gap: 2rem;
      margin: 72px 0 5%;
 }
 .jumbotronDark {
-     background-color: var(--dark-background-color) !important;
+     background-image: linear-gradient(45deg, #f5a403, #f80e6b);
 }
 .caption,.captionDark{
      display: flex;
@@ -27,20 +27,21 @@
 }
 .caption h2, .captionDark h2{
      font-weight: 900;
-     color: var(--main-color) !important;;
+     color: var(--light-text-color) !important;
 }
 .caption h5, .captionDark h5{
      font-size: 20px;
      line-height: 30px;
+     color: var(--light-text-color) !important;
 }
-.captionDark h5{
-     color: var(--dark-text-color);
+.captionDark h5, .captionDark h2{
+     /* color: var(--dark-text-color) !important; */
 }
 
 .imageDiv img{
      width: 100%;
      height: 100%;
-     object-fit: cover;
+     object-fit: contain;
 }
 .buttons{
      display: flex;
@@ -56,7 +57,7 @@
      background-color: var(--secondary-main-color) !important;
 }
 .startShoppingDark, .knowMoreDark{
-     color: var(--dark-text-color) !important;
+     /* color: var(--dark-text-color) !important; */
 }
 @media (min-width: 768px) and (max-width: 1024px) {
      .jumbotron, .jumbotronDark{
