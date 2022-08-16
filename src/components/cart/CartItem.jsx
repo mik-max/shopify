@@ -7,13 +7,16 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import classes from './CartItem.module.css';
 function CartItem({item, onUpdate, onRemove}) {
      const {darkMode} = useContext(Context);
+     function truncate(str, n){
+          return str?.length > n ? str.substr(0, n-1) + "..." : str;
+     }
   return (
 
     <div>
           <Card className = {darkMode ? classes.rootDark :classes.root}>
                <CardMedia image = {item.image.url} alt ={item.name} className = {classes.media} />
                <CardContent className = {classes.cardContent}>
-                    <Typography variant = 'h5' gutterBottom>{item.name}</Typography>
+                    <Typography variant = 'h5' gutterBottom>{truncate(item.name, 18)}</Typography>
                     <Typography variant = 'h6'>{item.line_total.formatted_with_symbol}</Typography>
                </CardContent>
                <CardActions className = {classes.cardActions}>
