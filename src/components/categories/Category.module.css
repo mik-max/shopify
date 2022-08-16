@@ -1,0 +1,25 @@
+.Container,.ContainerDark{
+     margin-top: 5%;
+     padding: 50px 20px;
+     background-color: white;
+     position: relative;
+}
+.ContainerDark{
+     background-color: var(--dark-background-color) !important;
+}
+.spinner{
+     height: 80vh;
+     position: relative;
+}
+.spinnerDiv{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+@media (max-width: 479px){
+     .Container,.ContainerDark{
+          margin-top: 10%;
+          
+     }
+   }

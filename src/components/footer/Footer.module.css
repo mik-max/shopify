@@ -1,6 +1,11 @@
 .footer{
-     padding: 20px 50px;
+     padding: 40px 50px;
      background-color: var(--dark-background-color);
+     border-top: 5px solid var(--main-color);
+}
+.subFooter{
+     padding: 15px 0px;
+     border-bottom: 2px solid var(--secondary-main-color);
 }
 .title{
      flex-grow: 1;
@@ -8,10 +13,11 @@
      align-items: center;
      text-decoration: none;
      font-family: 'Josefin Sans', sans-serif;
-     font-size: 40px;
+     font-size: 45px;
      letter-spacing: 1px;
      font-weight: 900;
-     color: var(--dark-text-color);
+     color: var(--dark-text-color) !important;
+     gap: 1rem;
 }
 .item{
      text-align: center;
@@ -28,12 +34,15 @@
      gap: .5rem;
      color: var(--dark-text-color);
 }
+.newsLetter form {
+     position: relative;
+}
 .newsLetter h5{
      font-size: 20px;
      font-weight: 700;
 }
 .newsLetter h6{
-     font-size: 18px;
+     font-size: 16px;
 }
 .socialMedia{
      display: flex;
@@ -55,15 +64,29 @@
      list-style-type: none;
 }
 .socialIconsDiv li a{
-     color: var(--main-color)!important;
+     color: var(--secondary-main-color)!important;
 }
 .emailInput{
+     display: inline-block;
      width: 100%;
-     border: 1px solid var(--dark-text-color);
-     border-radius: 4px;
      outline: none;
-     height: 50px;
-     padding: 10px;
+     padding: 16px 140px 16px 15px;
+     border: 2px solid var(--secondary-main-color);
+     border-radius: 30px;
+}
+.submitInput{
+     position: absolute;
+     display: inline-block;
+     outline: none;
+     border: none;
+     background: var(--secondary-main-color);
+     color: var(--dark-text-color);
+     padding: 12px 30px;
+     border-radius: 30px;
+     box-shadow: 0px 0px 6px #000, 0px 0px 14px #868686;
+     cursor: pointer;
+     top: 6px;
+     right: 6px;
 }
 .footerMenu{
      color: var(--dark-text-color);
@@ -72,6 +95,7 @@
      font-size: 22px;
      font-weight: 800;
      margin-bottom: 1rem;
+     color: var(--secondary-main-color);
 }
 .footerMenu ul {
      display: flex;
@@ -85,4 +109,7 @@
 .footerMenu ul li a{
      text-decoration: none;
      color: var(--dark-text-color);
+}
+.footerMenu ul li a:hover{
+     color: var(--secondary-main-color);
 }

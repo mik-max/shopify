@@ -17,9 +17,7 @@ function Cart({cart, update, remove, empty}) {
                     <CircularProgress fontSize = 'large'/>
                </div>
           )
-     }  else{
-          console.log('cart is confused')
-     }
+     } 
      let EmptyCart = () => (
           <>
                <div className={classes.emptyCartContainer}>

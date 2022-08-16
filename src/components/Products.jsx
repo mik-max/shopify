@@ -4,7 +4,6 @@ import {Grid, Typography, Button} from '@mui/material';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import Product from './products/Product';
-import Footer from './footer/Footer';
 import classes from './Products.module.css';
 
 function Products({products, onAddToCart}) {
@@ -21,7 +20,7 @@ function Products({products, onAddToCart}) {
                     </div>
                </div>
                <div className={classes.imageDiv}>
-                    <img src = '/images/shopping-pana.svg' alt = 'Caption img' />
+                    <img src = '/images/landing2.png' alt = 'Caption img' />
                </div>
           </div>
           <main className= {darkMode ? classes.mainDark : classes.main}>
@@ -35,7 +34,6 @@ function Products({products, onAddToCart}) {
                     }
                </Grid>
           </main>
-          <Footer/>
      </div>
     
   )
