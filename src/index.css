@@ -6,6 +6,7 @@
      scroll-behavior: smooth;
      scroll-padding-block-start: 3rem;
      font-family: 'Josefin Sans', sans-serif !important;
+     /* border: 1px solid red; */
 }
 :root{
      --light-text-color: #000000;

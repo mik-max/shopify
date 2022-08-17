@@ -8,7 +8,6 @@ import Product from '../products/Product';
 function Category({onAddToCart}) {
      const {categorySlug} = useParams()
      const [loading, setloading] = useState(false)
-     console.log(categorySlug)
      const [category, setCategory] = useState([])
      const {darkMode} = useContext(Context)
      
