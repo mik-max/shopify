@@ -3,6 +3,7 @@ import {Grid, Typography} from '@mui/material';
 import {Instagram, FacebookRounded, Twitter, YouTube} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import classes from './Footer.module.css';
+import './footer.css'
 function Footer() {
      const navigate = useNavigate();
   return (
@@ -29,14 +30,23 @@ function Footer() {
                     <Grid classsName = {classes.item} item  xs = {12} sm = {6} md ={4} lg = {4}>
                          <div className={classes.socialMedia}>
                               <Typography variant = 'h4' align='center'>Follow us on</Typography>
-                              <div>
+                              <div class="content">
+                                   <div class="icon-container">
+                                        <div className="icon icon-fill"><a href=""><i className ='bx bxl-instagram'></i></a></div>
+                                        <div className="icon icon-enter"><a href=""><i className ='bx bxl-facebook-circle'></i></a></div>
+                                        <div className="icon icon-expand"><a href=""><i className ='bx bxl-twitter'></i></a></div>
+                                        <div className="icon icon-collapse"><a href=""><i className ='bx bxl-whatsapp'></i></a></div>
+                                        
+                                   </div>
+                              </div>
+                              {/* <div>
                                    <ul className={classes.socialIconsDiv}>
                                         <li><a href="#"><FacebookRounded/></a></li>
                                         <li><a href="#"><Instagram/></a></li>
                                         <li><a href="#"><Twitter/></a></li>
                                         <li><a href=""><YouTube/></a></li>
                                    </ul>
-                              </div>
+                              </div> */}
                          </div>
                     </Grid>
                </Grid>

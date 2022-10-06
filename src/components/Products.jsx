@@ -24,10 +24,10 @@ function Products({products, onAddToCart}) {
                </div>
           </div>
           <main className= {darkMode ? classes.mainDark : classes.main}>
-               <Grid container justify = 'center' spacing={4}>
+               <Grid container justifyContent='center' alignItems='center' spacing={4}>
                     {
                          products.map((item) => (
-                              <Grid item key={item.id} xs = {12} sm = {6} md ={4} lg = {3}>
+                              <Grid item key={item.id} xs = {12} sm = {6} md ={4} lg = {3} xl = {3} >
                                    <Product product={item} onAddToCart ={onAddToCart} />
                               </Grid>
                          ))

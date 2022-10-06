@@ -37,7 +37,7 @@ function Cart({cart, update, remove, empty}) {
           <Typography gutterBottom variant = 'h4' className  = {darkMode ? classes.titleDark :classes.title }>Your Shopping Cart <ShoppingCart fontSize='large' /> </Typography>
           {!cart.line_items.length ? <EmptyCart/> :
            <>
-               <Grid container justify = 'center' spacing = {3}>
+               <Grid container justifyContent='center' alignItems='center' spacing = {3}>
                     {cart?.line_items.map((item) => (
                          <Grid item xs = {12} sm = {6} md ={4} lg = {3} key = {item.id}>
                               <CartItem item = {item} onUpdate = {update} onRemove = {remove} />
@@ -49,11 +49,31 @@ function Cart({cart, update, remove, empty}) {
                          Subtotal: {cart?.subtotal.formatted_with_symbol}
                     </Typography>
                     <div className= {classes.buttons}>
-                         <Button onClick={ () => {empty()}} className={darkMode ? classes.emptyButtonDark :classes.emptyButton} size = 'large' type = 'button' variant = 'contained'>Empty Cart <RemoveShoppingCart /></Button>
+                         <button onClick={ () => {empty()}} className={darkMode ? classes.emptyButtonDark :classes.emptyButton}  type = 'button' >
+                              Empty Cart <RemoveShoppingCart />
+                              <span className={classes.blobBtnInner}>
+                                   <span className={classes.blobBtnBlobs}>
+                                        <span className={classes.blobBtnBlob}></span>
+                                        <span className={classes.blobBtnBlob}></span>
+                                        <span className={classes.blobBtnBlob}></span>
+                                        <span className={classes.blobBtnBlob}></span>
+                                   </span>
+                              </span>
+                         </button>
                          <Button className={darkMode ? classes.checkoutButtonDark : classes.checkoutButton} onClick = {() => {navigate('/checkout')}} size = 'large' type = 'button' variant = 'contained'>Checkout <ShoppingCartCheckout/></Button>
                          
                     </div>
+                                   
                </div>
+               <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+               <defs>
+               <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                    <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+               </filter>
+               </defs>
+               </svg>
           </>}
     </Container>
   )
